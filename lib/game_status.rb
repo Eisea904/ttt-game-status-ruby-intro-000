@@ -61,7 +61,7 @@ def over?(board)
   end
 end
 
-def winner?(board) { |win_combo|
+def winner?(win_combo)
   if won? == true
     return WIN_COMBINATIONS.index
     return character
