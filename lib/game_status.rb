@@ -41,7 +41,7 @@ def draw?(board)
   if full? == true
     if won? == true
       return false
-    else 
+    else
       return true
     end
   else
@@ -69,7 +69,3 @@ def winner?(board) do |win_combo|
     return false
   end
 end
-  
-    
-
-  
