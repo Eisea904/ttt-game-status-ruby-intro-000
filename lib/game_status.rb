@@ -19,9 +19,9 @@ def won?(board)
     position_2 = board[index_1]
     position_3 = board[index_2]
 
-    if position_1 == "X" && position_2 == "X" && position_3 == "X"}
+    if position_1 == "X" && position_2 == "X" && position_3 == "X"
       return win_combo
-    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"}
+    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
       return win_combo
     end
   }
@@ -29,4 +29,47 @@ def won?(board)
 end
 
 def full?(board)
-  board.each {|index|}
+  board.each do |index|
+    if board(index) == "X" || "O"
+      return true
+    else
+      return false
+    end
+end
+
+def draw?(board)
+  if full? == true
+    if won? == true
+      return false
+    else 
+      return true
+    end
+  else
+    return false
+  end
+end
+
+def over?(board)
+  if won? == true
+    return true
+  elsif full? == true
+    return true
+  elsif draw? == true
+    return true
+  else
+    return false
+  end
+end
+
+def winner?(board) do |win_combo|
+  if won? == true
+    return WIN_COMBINATIONS.index
+    return character
+  else
+    return false
+  end
+end
+  
+    
+
+  
