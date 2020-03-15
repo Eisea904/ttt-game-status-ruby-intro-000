@@ -29,43 +29,35 @@ def won?(board)
 end
 
 def full?(board)
-  board.each do |index|
-    if board(index) == "X" || "O"
-      return true
-    else
-      return false
-    end
+  board.all? {|index| index == "X" || index == "O"}
 end
 
 def draw?(board)
-  if full? == true
-    if won? == true
-      return false
-    else
-      return true
-    end
+  if full?(board) && !won?(board)
+    return true
   else
     return false
   end
 end
 
 def over?(board)
-  if won? == true
-    return true
-  elsif full? == true
-    return true
-  elsif draw? == true
+  if full?(board) || won?(board) || draw?(board)
     return true
   else
     return false
   end
 end
 
-def winner?(win_combo)
-  if won? == true
-    return WIN_COMBINATIONS.index
-    return character
-  else
-    return false
+def winner?(board)
+  index = []
+  index = won?(board)
+  if index == false
+    return "none"
+  else 
+    if board[index[0]] == "X"
+      return "X"
+    else
+      return "O"
+    end
   end
 end
