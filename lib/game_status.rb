@@ -61,11 +61,12 @@ def over?(board)
   end
 end
 
-def winner?(board) do |win_combo|
+def winner?(board) { |win_combo|
   if won? == true
     return WIN_COMBINATIONS.index
     return character
   else
     return false
   end
+  }
 end
