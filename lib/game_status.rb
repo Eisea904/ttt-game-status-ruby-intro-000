@@ -67,4 +67,5 @@ def winner?(win_combo)
     return character
   else
     return false
+  end
 end
